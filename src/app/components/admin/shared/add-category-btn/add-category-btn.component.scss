@@ -1,0 +1,178 @@
+@import './../../../../../styles-shared.scss';
+
+label {
+  width: 117px;
+  height: 23px;
+  text-align: center;
+  cursor: pointer;
+  color: $primary-dark-blue;
+}
+
+.close {
+  outline: none;
+}
+
+.modal-header {
+  text-align: center;
+  border: none;
+  font-size: $font-size-24;
+  text-align: center;
+  color: $text-color-dark-blue;
+}
+
+.modal-body-title,
+.btn-add-assets,
+.add-text,
+.btn-cancel,
+.attributes-paragraph,
+.modal-header,
+.submit-message {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 23px;
+}
+
+.submit-message {
+  width: 88%;
+  text-align: center;
+  color: $primary-dark-blue;
+  font-size: $font-size-24;
+}
+
+.modal-attribute {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.mat-form-fields {
+  margin-bottom: 15px;
+}
+
+.modal-body-title {
+  font-size: $font-size-16;
+  color: $secondary-color;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 10px !important;
+}
+
+.modal-body-title::placeholder {
+  color: $secondary-color;
+}
+
+.modal-body-title:focus {
+  outline: none;
+}
+
+.modal-body-title:hover::placeholder,
+.modal-body-title:focus::placeholder {
+  color: $primary-dark-blue;
+}
+
+.modal-body-title:hover,
+.modal-body-title:focus {
+  color: $primary-dark-blue;
+}
+
+.delete-category {
+  margin: 0 0px 19px 11px;
+  outline: none;
+  position: absolute;
+  right: -30px;
+  margin-top: 20px;
+}
+
+.add-another {
+  border: none;
+  background: none;
+  outline: none;
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+.plus-marker {
+  width: 30px;
+  height: 30px;
+  background: $url $plus-marker;
+}
+
+.add-text {
+  font-size: $font-size-16;
+  color: $secondary-light-blue;
+}
+
+.btn-cancel {
+  color: $secondary-light-blue;
+  width: 100%;
+  margin-top: 10px;
+  font-size: $font-size-16;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.btn-add {
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: $font-size-16;
+  background: $primary-dark-blue;
+  color: $background-color;
+  font-weight: $bold;
+  border: none;
+}
+
+.btn-add:disabled {
+  background: $secondary-color;
+}
+
+.btn-add:disabled:hover {
+  background: $secondary-color;
+  outline: none;
+  border: none;
+}
+
+.btn-add:hover {
+  background: $hover-state-blue;
+}
+
+.btn-add:active {
+  background: $text-color-dark-blue;
+}
+
+.btn-third {
+  background: $secondary-btn-background;
+  width: 200px;
+  height: 50px;
+  color: $primary-dark-blue;
+  margin-left: 16px;
+}
+
+.attributes-paragraph {
+  margin-top: 30px;
+  font-size: $font-size-14;
+  color: $text-color-dark-blue;
+}
+
+.child-entity {
+  font-size: $font-size-18;
+  color: $text-color-dark-blue;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .delete-category {
+    right: 0;
+    margin: 0;
+    width: 30px;
+    height: 64px;
+  }
+
+  .modal-attribute {
+    margin-right: 30px;
+  }
+}

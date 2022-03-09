@@ -1,0 +1,33 @@
+@import './../../../../../styles-shared.scss';
+
+.closeQR {
+    width: 100%;
+    background: $primary-dark-blue;
+    color: $background-color;
+    border-radius: 5px;
+    height: 56px;
+    border: none;
+    outline: none;
+    font-size: $font-size-16;
+}
+
+.closeContainer {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 421px;
+    padding-bottom: 30px;
+}
+
+.top-close-modal {
+    position: relative;
+    width: 15px;
+    float: right;
+}
+
+.close {
+    position: absolute;
+}
+
+img {
+    width: 100%;
+}

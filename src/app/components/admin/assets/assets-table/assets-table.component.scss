@@ -1,0 +1,190 @@
+@import './../../../../../styles-shared.scss';
+
+td.mat-cell:first-of-type,
+tr.mat-header-row th,
+.add-text {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
+}
+
+.dropdown-toggle {
+    background: $url $dropdown-more-off;
+    height: 25px;
+    width: 20px;
+    min-width: auto;
+}
+
+.dropdown-toggle:hover {
+    background: $url $dropdown-more-on;
+}
+
+.table-container {
+    margin-top: 50px;
+}
+
+.mat-table {
+    width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+    border: none;
+}
+
+td.mat-cell:last-of-type {
+    position: relative;
+}
+
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+    padding-right: 0px;
+}
+
+td.mat-cell:first-of-type {
+    font-weight: $bold;
+    font-size: $font-size-18;
+    color: $text-color-dark-blue;
+    padding-left: 0px;
+}
+
+tr.mat-header-row {
+    font-size: $font-size-16;
+    color: $background-color;
+    background: $background-page-color;
+}
+
+tr.mat-header-row th {
+    color: $secondary-color;
+}
+
+tr.mat-header-row th,
+td.mat-cell:last-of-type {
+    font-size: $font-size-16;
+}
+
+tr.mat-row {
+    height: 78px;
+    border-radius: 5px;
+    border-bottom: 8px solid $background-color;
+    background: $background-color;
+    opacity: 0.5;
+}
+
+tr.mat-row:hover,
+tr.mat-row:focus {
+    opacity: 1;
+}
+
+td.mat-cell {
+    margin-top: 10px;
+}
+
+.dropdown-more {
+    float: right;
+    margin-right: 10px;
+}
+
+.mat-paginator {
+    background: $background-color;
+}
+
+mat-tab-group {
+    margin-top: 40px;
+}
+
+.mat-column-data {
+    color: $secondary-color;
+}
+
+.category-tooltip {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tooltip-text .fa-edit,
+.tooltip-text .fa-trash {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 1px 1px;
+}
+
+.tooltip-text .fa-edit {
+    padding-left: 3px;
+}
+
+.tooltip-name {
+    width: auto;
+}
+
+.category-tooltip .tooltip-text {
+    display: none;
+    width: 26px;
+    background: transparent;
+    color: $primary-dark-blue;
+    text-align: center;
+    border-radius: 5px;
+    padding-left: 5px;
+    z-index: 1;
+}
+
+.tooltip-text .fa-edit:hover,
+.tooltip-text .fa-trash:hover {
+    background: $primary-dark-blue;
+    color: $background-color;
+}
+
+.category-tooltip:hover .tooltip-text {
+    display: inline-grid;
+}
+
+.mat-tab-label {
+    min-width: 200px;
+}
+
+.edit-asset,
+.delete-asset,
+.view-qr,
+.asset-history {
+    font-size: $font-size-16;
+    color: $secondary-color;
+}
+
+.edit-asset:hover,
+.delete-asset:hover,
+.view-qr:hover,
+.asset-history:hover {
+    color: $background-color;
+    background: $primary-dark-blue;
+}
+
+.more-button {
+    position: absolute;
+    right: 70px;
+    top: 26px;
+}
+
+.table-container span {
+    font-size: $font-size-18;
+    color: $secondary-color;
+}
+
+.expand-row {
+    padding: 15px 0;
+}
+
+.expand-row:not(:last-child) {
+    border-bottom: 1px solid $border-expand;
+}
+
+@media screen and (max-width: 800px) {
+
+    mat-tab-group,
+    .table-container {
+        margin-top: 20px;
+    }
+}

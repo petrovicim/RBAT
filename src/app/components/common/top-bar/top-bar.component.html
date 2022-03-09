@@ -1,0 +1,23 @@
+<div class="container-navbar">
+  <div class="navbar-nav">
+    <div class="content">
+      <div class="profile">
+        <img class="profile-img"
+          src="{{userDetails.image_url ? userDetails.image_url : './../../../../../../assets/img/default.png'}}">
+        <div class="profile-info" mat-button [matMenuTriggerFor]="menu">
+          <ul>
+            <li class="profile-name">{{userDetails.uid}}</li>
+            <li class="profile-role">{{userDetails.role}}</li>
+          </ul>
+          <mat-menu #menu="matMenu" class="top-profile">
+            <div class="pointing-square"></div>
+            <button mat-menu-item class="user-profile" (click)="editProfile()"><span class="fa fa-user"></span>
+              Profile</button>
+            <button mat-menu-item class="user-logout" (click)="logoutUser()"><span class="fa fa-sign-out-alt"></span>
+              Logout</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+<div class="edit-data-component">
+  <button type="button" class="close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <form #addForm="ngForm">
+    <div class="edit-header">
+      <p class="edit-title" id="exampleModalLongTitle">{{data.type}} edited</p>
+    </div>
+    <div *ngIf="data.type !== 'User'" class="content-dialog" mat-dialog-content>
+      <div *ngIf="edit.entity_name_state">
+        <mat-form-field *ngIf="data.type !== 'Child'">
+          <input matInput class="mat-input edit-name" type="text" [(ngModel)]="edit.data_name" name="name"
+            placeholder="Entity name" required pattern="^[a-zA-Z0-9 _.-]*$" minlength="2" #name="ngModel">
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+            Name cannot be empty!
+          </mat-error>
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.minlength">
+            Name must contain at least 2 characters!
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="data.type === 'Child'">
+          <input matInput class="mat-input edit-name" type="text" [(ngModel)]="edit.data_name" name="name"
+            placeholder="Child name" required pattern="^[a-zA-Z0-9 _.-]*$" minlength="2" #name="ngModel">
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+            Child name cannot be empty!
+          </mat-error>
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.minlength">
+            Child name must contain at least 2 characters!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="data.type !== 'Child'" class="attributes-text">
+        <span>{{data.type}} attributes</span>
+      </div>
+      <div *ngFor="let attribute of edit.data_values; let i = index; trackBy:trackByFn">
+        <mat-form-field>
+          <input matInput class="mat-input" type="text" [(ngModel)]="edit.data_values[i]" name="attribute_{{i}}"
+            placeholder="{{edit.data_keys[i]}}" required pattern="^[a-zA-Z0-9 _.-]*$" #attribute="ngModel">
+          <mat-error *ngIf="attribute.invalid && (attribute.dirty || attribute.touched) && attribute.errors.required">
+            {{edit.data_keys[i]}} cannot be empty!
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div *ngIf="data.type === 'User'" class="content-dialog" mat-dialog-content>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="editUser.name" class="mat-input edit-name" id="name" placeholder="Name"
+          required minlength="4" #name="ngModel" name="name" autocomplete="off">
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+          Name cannot be empty!
+        </mat-error>
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.minlength">
+          Name format doesn't match!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="email" [(ngModel)]="editUser.email" class="mat-input edit-name" id="email"
+          placeholder="Email" required pattern="[a-zA-Z0-9.-_]{2,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" #email="ngModel"
+          name="email" autocomplete="off">
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required">
+          Email is required!
+        </mat-error>
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.pattern">
+          Email format doesn't match!
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field>
+            <input matInput type="password" [(ngModel)]="newUser.password" class="mat-select" id="password"
+              placeholder="Password" required minlength="4" #password="ngModel" name="password_" autocomplete="off">
+            <mat-error *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required">
+              Password cannot be empty!
+            </mat-error>
+            <mat-error *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.minlength">
+              Password lenght must be minimum 6 characters!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="password" [(ngModel)]="newUser.password_confirmation" class="mat-select"
+              id="password_confirmation" placeholder="Password confirmation" required minlength="6" #password="ngModel"
+              name="password_confirmation" autocomplete="off">
+            <mat-error *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required">
+              Password cannot be empty
+            </mat-error>
+            <mat-error
+              *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.minlength && (newUser.password !== newUser.password_confirmation)">
+              The password doesn't match with the one above!
+            </mat-error>
+          </mat-form-field> -->
+
+      <!-- <mat-form-field>
+        <mat-label class="select-category">Assign role</mat-label>
+        <mat-select [value]="editUser.role" name="role" required #role>
+          <mat-option class="select-container" *ngFor="let role of userRoles; let i=index" [value]="role">
+            {{role}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          You need to set user role!
+        </mat-error>
+      </mat-form-field> -->
+
+      <mat-form-field>
+        <mat-label class="select-category">Assign group</mat-label>
+        <mat-select [formControl]="groups" multiple required #group>
+          <mat-option *ngFor="let group of editUser.group_name; let i = index" [value]="group">
+            {{group}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          You need to add at least one group for the user!
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button *ngIf="data.type === 'User'" mat-raised-button color="primary" type="sumbit" class="save-edit"
+        (click)="saveEdited()" [disabled]="!addForm.valid || groups.value.length === 0">Save
+        changes</button>
+      <button *ngIf="data.type !== 'User'" mat-raised-button color="primary" type="sumbit" class="save-edit"
+        (click)="saveEdited()" [disabled]="!addForm.valid">Save
+        changes</button>
+      <button type="button" class="cancel-edit" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+</div>

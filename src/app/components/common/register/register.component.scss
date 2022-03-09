@@ -1,0 +1,221 @@
+@import './../../../../styles-shared.scss';
+
+* {
+    transition: 0.3s;
+}
+
+section {
+    padding: 15px;
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    margin: auto;
+}
+
+section>* {
+    max-width: 600px;
+    width: 100%;
+    margin: 15px;
+}
+
+.register__hero-parent {
+    position: relative;
+    padding-bottom: 70%;
+}
+
+.register__hero {
+    max-width: 540px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $url-login-image;
+    background-size: 100% auto !important;
+    background-repeat: no-repeat !important;
+    margin: auto;
+}
+
+.register__title {
+    font-family: Rubik;
+    font-weight: 300;
+    font-size: $font-size-48;
+    line-height: normal;
+    color: $primary-dark-blue;
+    padding-bottom: 16px;
+}
+
+.register__subtitle {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-18;
+    line-height: 23px;
+    color: $secondary-light-blue;
+    padding-bottom: 40px;
+    max-width: 400px;
+}
+
+.register__subtitle>span>img {
+    margin-top: -9px;
+}
+
+.register__form {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.register__fields {
+    display: flex;
+    flex-flow: column;
+    background: $background-color;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.register__fields>*>* {
+    padding: 16px 57px 2px 20px;
+    width: 100%;
+}
+
+.register__fields>* {
+    display: flex;
+}
+
+.register__accept-input {
+    position: absolute;
+    top: 6px;
+    right: -35px;
+    left: auto;
+    bottom: auto;
+    height: 20px;
+    width: 20px;
+}
+
+.register__actions {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-bottom: 30px;
+}
+
+.register__actions {
+    font-family: Rubik;
+    font-weight: $bold;
+    font-size: $font-size-16;
+    line-height: 23px;
+    color: $secondary-color;
+    margin-left: 14px;
+}
+
+.register__actions span {
+    text-decoration: underline;
+}
+
+mat-form-field span {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: block;
+    margin-right: 15px;
+}
+
+mat-form-field span>img {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+}
+
+mat-form-field:nth-of-type(2) span>img {
+    bottom: 7px;
+}
+
+button {
+    background: $primary-dark-blue;
+    border-radius: 5px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: $bold;
+    font-size: $font-size-16;
+    line-height: 23px;
+    text-align: center;
+    color: $background-color;
+    padding-top: 16px;
+    padding-bottom: 17px;
+}
+
+button:disabled,
+button:disabled:hover {
+    background: $secondary-color;
+    outline: none;
+    border: none;
+}
+
+.ng-select__parent {
+    position: relative;
+}
+
+.matPrefix {
+    position: absolute;
+    top: 27px;
+}
+
+.matSufix {
+    top: 34px;
+    right: 21px;
+}
+
+.existing-email {
+    text-align: center;
+    color: $background-delete;
+    font-size: $font-size-18;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 758px) {
+    section {
+        flex-flow: column;
+        padding-top: 30px;
+    }
+
+    section>* {
+        max-width: 450px;
+    }
+
+    .register__hero-parent {
+        margin-bottom: 20px;
+    }
+
+    .register__fields>* {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .register__fields>*>* {
+        border-bottom: 1px solid $input-border;
+    }
+
+    .register__fields>*:last-child>*:last-child {
+        border: 0px;
+    }
+}
+
+@media screen and (min-width: 759px) {
+    .register__form {
+        padding-bottom: 60px;
+    }
+
+    .register__fields>*>*:last-child {
+        border-left: 1px solid $input-border;
+    }
+
+    .register__fields>*:not(:last-child) {
+        border-bottom: 1px solid $input-border;
+    }
+}

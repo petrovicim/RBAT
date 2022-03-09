@@ -1,0 +1,71 @@
+<mat-tab-group (selectedTabChange)="getTabIndex($event)">
+  <mat-tab *ngFor="let category of entityTypes" label="{{category.name}}">
+    <ng-template mat-tab-label>
+      <div class="category-tooltip">
+        <span class="tooltip-name">{{category.name}}</span> <span *ngIf="admin" class="tooltip-text"><button
+            type="button" class="fa fa-edit" (click)="editCategory(category.uid)"></button><button type="button"
+            class="fa fa-trash" (click)="deleteCategory(category.uid)"></button></span>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
+<div class="table-container">
+  <span *ngIf="entitiesList.length < 1">There aren't any data yet.</span>
+  <table mat-table [dataSource]="dataSource" *ngIf="entitiesList.length > 0">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>
+        <span *ngIf="dataSource.filter.length == 0">Entity</span>
+        <span *ngIf="dataSource.filter.length > 0 && dataSource.filteredData.length > 0">Entity</span>
+        <span *ngIf="dataSource.filter.length > 0 && dataSource.filteredData.length == 0">There are no data linked with
+          "{{dataSource.filter}}"</span>
+      </th>
+
+      <mat-expansion-panel mat-cell #MatSort *matCellDef="let entitiesList">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{entitiesList.name}}
+          </mat-panel-title>
+          <mat-panel-descriptiopn>
+            28.03.2019
+          </mat-panel-descriptiopn>
+        </mat-expansion-panel-header>
+
+        <div class="expand-row" *ngFor="let key of entitiesList.entity_data | ReadObjectPipe">
+          {{key}}: {{entitiesList.entity_data[key]}}
+        </div>
+      </mat-expansion-panel>
+    </ng-container>
+
+    <ng-container matColumnDef="more">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let entitiesList">
+        <div class="more-button">
+          <button mat-button [matMenuTriggerFor]="menu" class="dropdown-toggle dropdown-menu-user"></button>
+          <mat-menu #menu="matMenu">
+            <div class="pointing-square"></div>
+            <button *ngIf="admin" mat-menu-item class="user-activate" (click)="editEntity(entitiesList.uid)"><span
+                class="fa fa-edit"></span>
+              Edit</button>
+            <button *ngIf="admin" mat-menu-item class="user-activate"
+              (click)="addEntityChild(entitiesList.uid, entitiesList.name)"><span class="fa fa-edit"></span>
+              Add child</button>
+            <button mat-menu-item class="user-activate"
+              (click)="redirectToNestedEntities(entitiesList.uid, entitiesList.name)"><span
+                class="fa fa-edit"></span>View child</button>
+            <button *ngIf="admin" mat-menu-item class="user-delete" (click)="deleteEntity(entitiesList.uid)"><span
+                class="fa fa-trash-alt"></span> Delete</button>
+          </mat-menu>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      <td><img src="./../../../../assets/icons/assets-dropdown0.png"></td>
+    </tr>
+  </table>
+  <mat-paginator [ngStyle]="{'display': entitiesList.length > 5 ? 'block' : 'none'}" [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons>
+  </mat-paginator>
+</div>

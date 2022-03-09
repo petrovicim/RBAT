@@ -1,0 +1,73 @@
+@import './../../../../../styles-shared.scss';
+
+.closeQR {
+    width: 100%;
+    background: $primary-dark-blue;
+    color: $background-color;
+    border-radius: 5px;
+    height: 56px;
+    font-size: $font-size-18;
+    border: none;
+    outline: none;
+}
+
+.closeContainer {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.top-close-modal {
+    position: relative;
+    width: 15px;
+    float: right;
+}
+
+.close {
+    position: absolute;
+}
+
+img {
+    width: 100%;
+}
+
+.dialog-content span,
+.dialog-content p {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    color: $text-color-dark-blue;
+}
+
+.dialog-content span {
+    font-size: $font-size-36;
+    font-weight: $bold;
+}
+
+.dialog-content p {
+    font-size: $font-size-24;
+}
+
+.dialog-content {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.mat-dialog-content {
+    margin: 0 !important;
+    overflow: unset !important;
+    max-height: unset !important;
+}
+
+@media screen and (max-width: 650px) {
+    .dialog-content span {
+        font-size: $font-size-24;
+    }
+
+    .dialog-content p {
+        font-size: $font-size-18;
+    }
+}

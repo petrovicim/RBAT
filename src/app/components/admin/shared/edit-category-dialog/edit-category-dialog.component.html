@@ -1,0 +1,85 @@
+<div class="edit-category-component">
+  <div class="top-close-modal">
+    <button type="button" class="close" (click)="closeDialog()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="edit-header" mat-dialog-header>
+    <span class="edit-title">Edit {{data.type}} category</span>
+  </div>
+  <form #addForm="ngForm">
+    <div class="content-dialog" mat-dialog-content>
+      <mat-form-field>
+        <input matInput class="emat-input edit-name" [(ngModel)]="editCategory.name" placeholder="Category name"
+          name="name" required pattern="^[a-zA-Z0-9 _.-]*$" minlength="2" #name="ngModel">
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+          Name cannot be empty!
+        </mat-error>
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.minlength">
+          Name must contain at least 2 characters!
+        </mat-error>
+      </mat-form-field>
+
+      <div *ngIf="data.type !== 'user'">
+        <div class="attributes-text">
+          <span *ngIf="state.attribute">Category Attributes</span>
+        </div>
+        <div class="edit-attribute" *ngFor="let attribute of editCategory.attributes; let i = index; trackBy:trackByFn">
+          <mat-form-field>
+            <input matInput class="mat-input" [(ngModel)]="editCategory.attributes[i]" placeholder="Attribute {{i+1}}"
+              name="attribute_{{i}}" required pattern="^[a-zA-Z0-9 _.-]*$" minlength="2" #attribute="ngModel">
+            <mat-error *ngIf="attribute.invalid && (attribute.dirty || attribute.touched) && attribute.errors.required">
+              Attribute {{i+1}} cannot be empty!
+            </mat-error>
+            <mat-error
+              *ngIf="attribute.invalid && (attribute.dirty || attribute.touched) && attribute.errors.minlength">
+              Attribute {{i+1}} must contain at least 2 characters!
+            </mat-error>
+          </mat-form-field>
+
+          <button type="button" class="close delete-category" (click)="deleteAttribute(i)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div *ngIf="addForm.valid">
+          <button class="add-another" (click)="addFields()">
+            <div class="plus-marker"></div>
+            <span class="add-text">Add attribute</span>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="data.type === 'user'">
+        <mat-form-field>
+          <mat-label class="select-category">Assign entities</mat-label>
+          <mat-select [formControl]="entities" multiple required>
+            <mat-option *ngFor="let entity of entitiesList; let i = index" [value]="entity.name">
+              {{entity.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            You need to select at least one entity!
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label class="select-category">Assign users(optional)</mat-label>
+          <mat-select [formControl]="users" multiple>
+            <mat-option class="select-container" *ngFor="let user of usersList; let i=index" [value]="user.email">
+              {{user.email}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions>
+      <button *ngIf="data.type === 'user'" mat-raised-button color="primary" type="button" class="save-edit"
+        (click)="updateCategory()" [disabled]="!addForm.valid || entities.value.length === 0">Save
+        changes</button>
+      <button *ngIf="data.type !== 'user'" mat-raised-button color="primary" type="button" class="save-edit"
+        (click)="updateCategory()" [disabled]="!addForm.valid">Save
+        changes</button>
+      <button class="cancel-edit" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+</div>

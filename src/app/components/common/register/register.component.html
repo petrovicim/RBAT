@@ -1,0 +1,93 @@
+<section class="register-section">
+  <form class="register__form" #register="ngForm">
+    <div class="register__title">Welcome</div>
+    <div class="register__subtitle">To register your account, please type in your personal informations.
+      <span><img src="../../../../assets/icons/key.png"></span>
+    </div>
+    <div class="register__hero-parent">
+      <div class="register__hero"></div>
+    </div>
+    <span class="existing-email" *ngIf="existingEmail">Email has already been taken!</span>
+
+    <div class="register__fields">
+      <div>
+        <mat-form-field>
+          <div class="register__input-user-icon"></div>
+          <span matPrefix><img src="../../../../assets/icons/email.png"></span>
+          <input matInput name="name" id="name" class="register__usr-input ocr-input" [(ngModel)]="userData.name"
+            required minlength="4" #name="ngModel">
+          <img *ngIf="name.valid" src="../../../../assets/icons/accept-input.png" class="register__accept-input">
+          <mat-label>Name</mat-label>
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+            Name cannot be empty!
+          </mat-error>
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.minlength">
+            Name format doesn't match!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <div class="register__input-user-icon"></div>
+          <span matPrefix><img src="../../../../assets/icons/email.png"></span>
+          <input matInput name="email" id="email" class="register__usr-input ocr-input" [(ngModel)]="userData.email"
+            required pattern="[a-zA-Z0-9.-_]{2,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" #email="ngModel">
+          <img *ngIf="email.valid" src="../../../../assets/icons/accept-input.png" class="register__accept-input">
+          <mat-label>Your email adress</mat-label>
+          <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required">
+            Email is required!
+          </mat-error>
+          <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.pattern">
+            Email format doesn't match!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <span matPrefix><img src="../../../../assets/icons/password.png"></span>
+          <input matInput type="password" name="password" class="register__pass-input ocr-input"
+            [(ngModel)]="userData.password" required minlength="6" #password="ngModel">
+          <img *ngIf="password.valid" src="../../../../assets/icons/accept-input.png" class="register__accept-input">
+          <mat-label>Password</mat-label>
+          <mat-error *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required">
+            Password cannot be empty!
+          </mat-error>
+          <mat-error *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.minlength">
+            Password lenght must be minimum 6 characters!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <span matPrefix><img src="../../../../assets/icons/password.png"></span>
+          <input matInput type="password" name="confirmPassword" id="confirmPassword"
+            class="register__pass-input ocr-input" [(ngModel)]="userData.confirmPassword" required
+            minlength="{{userData.password.length}}" #confirmPassword="ngModel">
+          <img *ngIf="confirmPassword.valid && userData.password === userData.confirmPassword"
+            src="../../../../assets/icons/accept-input.png" class="register__accept-input">
+          <mat-label>Retype Password</mat-label>
+          <mat-error
+            *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.required">
+            Password cannot be empty
+          </mat-error>
+          <mat-error
+            *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.minlength && (userData.password !== userData.confirmPassword)">
+            The password doesn't match with the one above!
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="register__actions">
+      <div>Do you already have an account? <span (click)="redirect('/login')"> Log in</span></div>
+    </div>
+    <button tabindex="0" mat-button class="register-btn" (click)="registerUser()"
+      [disabled]="register.invalid || userData.password !== userData.confirmPassword">
+      <span>Sign Up</span>
+      <mat-icon class="register__mat-icon" svgIcon="keyboard_arrow_right"></mat-icon>
+    </button>
+  </form>
+</section>

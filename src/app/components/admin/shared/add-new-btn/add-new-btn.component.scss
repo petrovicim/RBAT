@@ -1,0 +1,108 @@
+@import './../../../../../styles-shared.scss';
+
+label {
+    width: 117px;
+    height: 23px;
+    text-align: center;
+    cursor: pointer;
+    color: $primary-dark-blue;
+}
+
+.modal-content {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.close {
+    margin-right: 5px;
+    outline: none;
+}
+
+.modal-header {
+    text-align: center;
+    border: none;
+    font-size: $font-size-24;
+    text-align: center;
+    color: $text-color-dark-blue;
+}
+
+mat-form-field:not(last-child) {
+    margin-bottom: 10px;
+}
+
+.mat-input,
+.btn-add,
+.add-text,
+.btn-cancel,
+.mat-select,
+.attributes-paragraph,
+.modal-header,
+.btn-cancel {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
+}
+
+.mat-input,
+.mat-select {
+    height: 56px;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    width: 100%;
+    font-size: $font-size-16;
+}
+
+.btn-cancel {
+    color: $secondary-light-blue;
+    width: 100%;
+    margin-top: 10px;
+    font-size: $font-size-16;
+}
+
+.attributes-paragraph {
+    margin-top: 30px;
+    font-size: $font-size-14;
+    color: $text-color-dark-blue;
+}
+
+.btn-cancel {
+    color: $secondary-light-blue;
+    width: 100%;
+    margin-top: 10px;
+    font-size: $font-size-16;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.btn-add {
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: $font-size-16;
+    background: $primary-dark-blue;
+    color: $background-color;
+    font-weight: $bold;
+    border: none;
+}
+
+.btn-add:disabled {
+    background: $secondary-color;
+}
+
+.btn-add:disabled:hover {
+    background: $secondary-color;
+    outline: none;
+    border: none;
+}
+
+.btn-add:hover {
+    background: $hover-state-blue;
+}
+
+.btn-add:active {
+    background: $text-color-dark-blue;
+}

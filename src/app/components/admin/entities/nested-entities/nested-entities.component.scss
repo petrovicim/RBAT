@@ -1,0 +1,281 @@
+@import './../../../../../styles-shared.scss';
+
+.entities-path {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 100px 30px 0 30px;
+  font-size: $font-size-16;
+
+  span {
+    cursor: pointer;
+  }
+
+  span:last-child {
+    color: $secondary-color;
+    cursor: default;
+  }
+
+  span:not(:last-child) {
+    color: $text-color-dark-blue;
+  }
+
+  span:not(:last-child):after {
+    width: 20px;
+    height: 20px;
+    content: ".";
+    color: transparent;
+    background: $url 378px 90px;
+    display: inline-block;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+
+.search-bar {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 100px 30px 0 30px;
+}
+
+.children-table {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 50px 30px 200px 30px;
+
+}
+
+
+
+
+td.mat-cell:first-of-type,
+tr.mat-header-row th,
+.add-text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 23px;
+}
+
+.dropdown-toggle {
+  background: $url $dropdown-more-off;
+  height: 25px;
+  width: 20px;
+  min-width: auto;
+}
+
+.dropdown-toggle:hover {
+  background: $url $dropdown-more-on;
+}
+
+.table-container {
+  margin-top: 50px;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  border: none;
+}
+
+td.mat-cell:last-of-type {
+  position: relative;
+}
+
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+  padding-right: 0px;
+}
+
+td.mat-cell:first-of-type {
+  font-weight: 600;
+  font-size: $font-size-18;
+  color: $text-color-dark-blue;
+  padding-left: 24px;
+
+}
+
+tr.mat-header-row {
+  font-size: 15px;
+  color: $background-color;
+  background: $background-page-color;
+}
+
+tr.mat-header-row th {
+  color: $secondary-color;
+}
+
+tr.mat-header-row th,
+td.mat-cell:last-of-type {
+  font-size: $font-size-16;
+}
+
+tr.mat-row {
+  height: 78px;
+  border-radius: 5px;
+  border-bottom: 8px solid $background-color;
+  background: $background-color;
+  opacity: 0.5;
+}
+
+tr.mat-row:hover,
+tr.mat-row:focus {
+  opacity: 1;
+}
+
+td.mat-cell {
+  margin-top: 10px;
+}
+
+.dropdown-more {
+  float: right;
+  margin-right: 10px;
+}
+
+
+.child-name,
+.child-date {
+  max-width: 300px;
+}
+
+.child-date {
+  color: $secondary-color;
+  font-size: $font-size-14;
+}
+
+.mat-paginator {
+  background: $background-color;
+}
+
+mat-tab-group {
+  margin-top: 40px;
+}
+
+.mat-column-data {
+  color: $secondary-color;
+}
+
+.category-tooltip {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tooltip-text .fa-edit,
+.tooltip-text .fa-trash {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 1px 1px;
+}
+
+.tooltip-text .fa-edit {
+  padding-left: 3px;
+}
+
+.tooltip-name {
+  width: auto;
+}
+
+.category-tooltip .tooltip-text {
+  display: none;
+  width: 26px;
+  background: transparent;
+  color: $primary-dark-blue;
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  z-index: 1;
+}
+
+.tooltip-text .fa-edit:hover,
+.tooltip-text .fa-trash:hover {
+  background: $primary-dark-blue;
+  color: $background-color;
+}
+
+.category-tooltip:hover .tooltip-text {
+  display: inline-grid;
+}
+
+.mat-tab-label {
+  min-width: 200px;
+}
+
+.user-activate,
+.user-delete {
+  font-size: $font-size-16;
+  color: $secondary-color;
+}
+
+.user-activate:hover,
+.user-delete:hover {
+  color: $background-color;
+  background: $primary-dark-blue;
+}
+
+.more-button {
+  position: absolute;
+  right: 70px;
+  top: 26px;
+}
+
+.table-container span {
+  font-size: $font-size-18;
+  color: $secondary-color;
+}
+
+.expand-row {
+  padding: 15px 0;
+}
+
+.expand-row:not(:last-child) {
+  border-bottom: 1px solid $border-expand;
+}
+
+.mat-header-cell:first-child {
+  width: 60%;
+}
+
+.no-child {
+  color: $text-color-dark-blue;
+  font-size: $font-size-18;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+
+  mat-tab-group,
+  .table-container {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .mat-header-cell:first-child {
+    width: 85%;
+  }
+
+  .more-button {
+    right: 10px;
+  }
+
+  tr .mat-cell:not(:last-child) {
+    display: flex;
+  }
+
+  .mat-header-cell:nth-child(2) {
+    display: none;
+  }
+
+  .child-date {
+    padding-left: 24px;
+  }
+}

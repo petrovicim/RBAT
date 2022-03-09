@@ -1,0 +1,107 @@
+@import './../../../../../styles-shared.scss';
+
+.mat-dialog-title p {
+    text-align: center;
+    padding: 40px 0 40px 0;
+    font-size: $font-size-24;
+    color: $text-color-dark-blue;
+}
+
+.mat-dialog-content {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.close-container {
+    margin: 0 auto;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    max-width: 300px;
+}
+
+.close-history {
+    width: 100%;
+    box-shadow: none;
+    color: $background-color;
+    background: $primary-dark-blue;
+    height: 56px;
+    font-size: $font-size-16;
+}
+
+.asset-history {
+    padding: 10px 34px;
+}
+
+.asset-history:not(:last-of-type) {
+    border-bottom: 1px solid $secondary-color;
+}
+
+.history-type {
+    color: $text-color-dark-blue;
+    font-weight: $bold;
+    font-size: $font-size-24;
+    width: 100%;
+}
+
+.history-timestamp {
+    float: right;
+    margin: 0;
+    font-size: $font-size-16;
+    color: $secondary-color;
+    padding-top: 10px;
+}
+
+.history-body {
+    font-size: $font-size-16;
+    color: $secondary-color;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: $background-scrollbar;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-dark-blue;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $hover-state-blue;
+}
+
+@media screen and (max-width: 800px) {
+    .history-title {
+        display: inline-grid;
+    }
+
+    .asset-history {
+        text-align: center;
+        display: grid;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .asset-history {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .history-type {
+        font-size: 16px;
+    }
+
+    .history-timestamp {
+        padding-top: 3px;
+    }
+
+    .history-timestamp,
+    .history-body {
+        font-size: $font-size-12;
+    }
+}

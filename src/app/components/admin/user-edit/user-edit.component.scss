@@ -1,0 +1,159 @@
+@import './../../../../styles-shared.scss';
+
+.user-edit__section {
+    padding: 15px;
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    padding-top: 120px;
+    margin: auto;
+}
+
+.user-edit__section>* {
+    margin: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.user-edit__card {
+    display: flex;
+    flex-flow: column;
+    margin: 15px;
+    padding: 35px 30px 40px;
+    background-color: $background-color;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+}
+
+.user-edit__card:first-child {
+    width: 100%;
+}
+
+.user-edit__card:last-child {
+    min-width: 220px;
+    align-items: center;
+}
+
+.user-edit__card>div:first-child {
+    font-family: Rubik;
+    font-weight: $bold;
+    font-size: $font-size-18;
+    line-height: 23px;
+    color: $text-color-dark-blue;
+    padding-bottom: 45px;
+}
+
+.user-edit__input-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.user-edit__input-body>label {
+    padding-top: 14px;
+    margin-right: calc(16px + 24px);
+    min-width: 120px;
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+    line-height: 23px;
+    color: $secondary-color;
+}
+
+.user-edit__input-body>mat-form-field {
+    width: 100%;
+}
+
+.user-edit__card-image img {
+    width: 146px;
+    height: 146px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+}
+
+
+
+button {
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: Rubik;
+    font-weight: $bold;
+    font-size: $font-size-18;
+    text-align: center;
+    color: $secondary-color;
+}
+
+.user-edit__card>label {
+    width: 146px;
+    height: 48px;
+    font-size: $font-size-16;
+    font-weight: normal;
+    margin-bottom: 20px;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+    color: $secondary-color;
+    padding-top: 12px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.user-edit__card-text {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-14;
+    line-height: 23px;
+    text-align: center;
+    color: $secondary-color;
+}
+
+.user-edit__actions {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.user-edit__actions>button {
+    margin: 0 15px;
+    width: 220px;
+    height: 56px;
+}
+
+.user-edit__actions>button:first-child {
+    background: $primary-dark-blue;
+    border: 1px solid $secondary-color;
+    font-family: Rubik;
+    color: $background-color;
+}
+
+.user-edit__actions>button:first-child:disabled {
+    background: $secondary-color;
+}
+
+@media screen and (max-width: 870px) {
+    .user-edit__section {
+        padding-top: 0;
+        max-width: 450px;
+    }
+
+    .user-edit__section>*:first-child {
+        flex-flow: column-reverse;
+    }
+
+    .user-edit__card:first-child {
+        width: calc(100% - 30px);
+    }
+
+    .user-edit__card>div:first-child {
+        text-align: center;
+    }
+
+    label {
+        display: none;
+    }
+}
