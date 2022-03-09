@@ -1,0 +1,47 @@
+<section class="user-edit__section">
+  <div>
+    <form class="user-edit__card" #profile="ngForm">
+      <div>General information</div>
+      <div class="user-edit__input-body">
+        <label>Full name</label>
+        <mat-form-field>
+          <input matInput [(ngModel)]="userData.name" name="username" class="login__usr-input ocr-input" required>
+          <mat-label>Full name</mat-label>
+          <mat-error>Full name cannot be empty</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="user-edit__input-body">
+        <label>Email adress</label>
+        <mat-form-field>
+          <input matInput [(ngModel)]="userData.email" name="email" class="login__usr-input ocr-input" required>
+          <mat-label>Email adress</mat-label>
+          <mat-error>Email cannot be empty</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="user-edit__card">
+      <div>Profile picture</div>
+      <div class="user-edit__card-image">
+        <img src="{{userData.image ? userData.image : './../../../../../assets/img/default.png'}}">
+      </div>
+      <label for="file-upload">
+        Change photo
+      </label>
+      <input #file id="file-upload" type="file" accept="image/*" (change)="preview($event)" />
+      <div class="user-edit__card-text">
+        Max, 5MB
+        <br>
+        JPG or PNG formats
+        <br><br>
+        Recommended size:
+        <br>
+        144px x 144
+      </div>
+    </div>
+  </div>
+  <div class="user-edit__actions">
+    <button [disabled]="profile.invalid" (click)="updateUser()">Save</button>
+    <button>Cancel</button>
+  </div>
+</section>

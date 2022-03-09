@@ -1,0 +1,31 @@
+<div class="filters">
+  <div class="dropdown">
+    <button class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <label class="dropdown-icon">Filters</label>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <form>
+        <label class="checkbox-label">First parameter here
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-label">First parameter here
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-label">First parameter here
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </form>
+    </div>
+  </div>
+  <div class="search">
+    <div class="search-area">
+      <span class="search-span" (click)="setFocus()"><label class="drop-icon"></label></span>
+      <input type="text" #search class="search-input" [(ngModel)]="componentInput" (keyup)="toggleFilter()"
+        placeholder="Search assets">
+    </div>
+  </div>
+</div>

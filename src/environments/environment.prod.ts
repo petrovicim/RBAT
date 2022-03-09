@@ -1,0 +1,16 @@
+export const environment = {
+  production: true,
+  base: 'http://192.168.210.127:8443/api/v1',
+  assets_types: '/asset_types/',
+  assets: '/assets/',
+  entity_types: '/entity_types/',
+  entities: '/entities/',
+  QR_path: 'http://192.168.210.127:8443',
+  history: '/history',
+  groups: '/groups/',
+  auth: '/auth',
+  users: '/users/',
+  sign_up: '/sign_up',
+  sign_in: '/sign_in',
+  sign_out: '/sign_out',
+};

@@ -1,0 +1,36 @@
+<div class="top-close-modal">
+  <button mat-dialog-header type="button" class="close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div mat-dialog-content *ngIf="data.error !== 'error' && data.type !== 'edit'">
+  <div class="dialog-content">
+    <span>You created a new {{data.type}}</span>
+    <p *ngIf="data.type == 'asset'">Your QR code is below</p>
+    <img *ngIf="data.type == 'asset'" [src]="QRpath">
+  </div>
+</div>
+<div mat-dialog-content *ngIf="data.type === 'edit'">
+  <div class="dialog-content">
+    <span>You {{data.message}} successfully!</span>
+    <p *ngIf="data.type === 'asset'">Your QR code is below</p>
+    <img *ngIf="data.type === 'asset'" [src]="QRpath">
+  </div>
+</div>
+<div mat-dialog-content *ngIf="data.error === 'error' && data.type !== 'edit'">
+  <div class="dialog-content">
+    <span>You couldn`t create a new {{data.type}}!</span>
+    <span>Please try again with valid data!</span>
+  </div>
+</div>
+<div mat-dialog-content *ngIf="data.error === 'error' && data.type === 'edit'">
+  <div class="dialog-content">
+    <span>You couldn`t {{data.message}}!</span>
+    <span>Please try again or come back later!</span>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <div class="closeContainer">
+    <button mat-raised-button class="closeQR" (click)="closeDialog()">Close</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div>
+  <app-side-menu *ngIf="!loginState" [title]="title"></app-side-menu>
+  <div>
+    <app-top-bar *ngIf="!loginState"></app-top-bar>
+    <div [ngClass]="{'app__menu-exist': !loginState}">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

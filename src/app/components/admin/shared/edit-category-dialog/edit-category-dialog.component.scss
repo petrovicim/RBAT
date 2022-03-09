@@ -1,0 +1,137 @@
+@import './../../../../../styles-shared.scss';
+
+.top-close-modal {
+    position: relative;
+    width: 3%;
+    float: right;
+}
+
+.content-dialog {
+    width: 100%;
+    margin: 0 auto;
+}
+
+mat-form-field:not(last-child) {
+    margin-bottom: 10px;
+}
+
+.edit-header,
+.edit-name,
+.attributes-text,
+.save-edit,
+.cancel-edit {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.edit-header {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    color: $text-color-dark-blue;
+    font-size: $font-size-24;
+}
+
+.mat-input {
+    height: 56px;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    width: 100%;
+    font-size: $font-size-16;
+}
+
+.attributes-text {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 5px;
+    color: $text-color-dark-blue;
+}
+
+.save-edit {
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: $font-size-16;
+    background: $primary-dark-blue;
+    color: $background-color;
+    font-weight: $bold;
+    border: none;
+}
+
+.save-edit:disabled {
+    background: $secondary-color;
+}
+
+.save-edit:disabled:hover {
+    background: $secondary-color;
+    outline: none;
+    border: none;
+}
+
+.save-edit:hover {
+    background: $hover-state-blue;
+}
+
+.save-edit:active {
+    background: $text-color-dark-blue;
+}
+
+.cancel-edit {
+    color: $secondary-light-blue;
+    width: 100%;
+    margin-top: 10px;
+    font-size: $font-size-16;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.close {
+    outline: none;
+}
+
+.delete-category {
+    margin: 0 0px 19px 11px;
+    outline: none;
+    position: absolute;
+    right: -30px;
+    margin-top: 20px;
+}
+
+.add-another {
+    border: none;
+    background: none;
+    outline: none;
+    display: flex;
+    padding: 0;
+    align-items: center;
+}
+
+.plus-marker {
+    width: 30px;
+    height: 30px;
+    background: $url $plus-marker;
+}
+
+.add-text {
+    font-size: $font-size-16;
+    color: $secondary-light-blue;
+}
+
+@media screen and (max-width: 700px) {
+    .delete-category {
+        right: 0;
+        margin: 0;
+        width: 30px;
+        height: 64px;
+    }
+
+    .edit-attribute {
+        margin-right: 30px;
+    }
+}

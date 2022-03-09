@@ -1,0 +1,32 @@
+<div id="menuToggle" class="menu-responsive">
+  <input type="checkbox" />
+  <span></span>
+  <span></span>
+  <span></span>
+  <div class="side-navbar" id="menu">
+    <img routerLink="" class="brand" src="./../../../../assets/icons/brand.PNG">
+    <div class="routes">
+      <ul>
+        <div class="users-container" routerLink="users" (click)="onClick('users')"
+          routerLinkActive="users-active-route">
+          <li class="users-logo" routerLink="users" (click)="onClick('users')" routerLinkActive="users-logo-active">
+          </li>
+          <a routerLink="users" (click)="onClick('users')" routerLinkActive="active">Users</a>
+        </div>
+        <div class="assets-container" routerLink="assets" (click)="onClick('assets')"
+          routerLinkActive="assets-active-route">
+          <li class="assets-logo" routerLink="assets" (click)="onClick('assets')" routerLinkActive="assets-logo-active">
+          </li>
+          <a routerLink="assets" (click)="onClick('assets')" routerLinkActive="active">Assets</a>
+        </div>
+        <div class="entities-container" routerLink="entities" (click)="onClick('entities')"
+          routerLinkActive="entities-active-route">
+          <li class="entities-logo" routerLink="entities" (click)="onClick('entities')"
+            routerLinkActive="entities-logo-active">
+          </li>
+          <a routerLink="entities" (click)="onClick('entities')" routerLinkActive="active">Entities</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

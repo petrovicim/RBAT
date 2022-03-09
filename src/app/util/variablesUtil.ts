@@ -1,0 +1,12 @@
+// export const baseURL = '';
+export const regexEmailValidation = new RegExp(/^(\S+)@([a-z0-9-]+)(\.)([a-z]{2,4})(\.?)([a-z]{0,4})+$/);
+export const regexPasswordValidation = new RegExp(/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[~`!@#$^&*()_+={}|:’<>,.?/%]).{6,20})/);
+export const regexUsernameValidation = new RegExp(/[A-Za-z0-9_.-]{10,50}$/);
+export const regexNameValidation = new RegExp(/^[A-Za-z0-9_.-]{3,20}$/);
+export const regexPhoneNumberValidation = new RegExp(/^[+]?[0-9]{10,15}$/);
+export const base64regex = new RegExp(/^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/);
+export const regexTextarea = new RegExp(/^(.|\s)*\S(.|\s)*$/);
+export const regexAmount = new RegExp(/^[0-9]+\.[0-9][0-9]$/);
+export const regexDateMonth = new RegExp(/^(1[0-2]|0[1-9])$/);
+export const regexDateDay = new RegExp(/^(0[1-9]|[12]\d|3[01])$/);
+export const regexMessage = new RegExp(/^.{1,1000}$/);

@@ -1,0 +1,120 @@
+@import './../../../../styles-shared.scss';
+
+.navbar-nav {
+    float: none !important;
+    height: 77px;
+    width: 100%;
+    border-bottom: 1px solid $border-expand;
+    position: relative;
+    margin: 0;
+    background: $background-color;
+    padding: 0 30px;
+}
+
+.content {
+    max-width: 1040px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.profile-info {
+    display: -webkit-inline-box;
+}
+
+.profile-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-info ul li {
+    text-align: initial;
+    margin-left: 10px;
+    margin: -5px 0px -5px 18px;
+}
+
+.profile-info:after {
+
+    content: 'aa';
+    width: 15px;
+    height: 15px;
+    background: $url-common $arrow-off;
+    color: transparent;
+    margin-left: 10px;
+}
+
+.profile-info:hover:after,
+.profile-info:focus:after {
+    background: $url-common $arrow-on;
+}
+
+.profile-name {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: $bold;
+    line-height: 23px;
+    font-size: $font-size-18;
+    color: $text-color-dark-blue;
+}
+
+.profile-role {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
+    font-size: $font-size-16;
+    color: $secondary-color;
+}
+
+.profile {
+    float: right;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.icon-drop {
+    margin-left: 10px;
+}
+
+.user-profile,
+.user-logout {
+    color: $secondary-color;
+}
+
+.user-profile:hover,
+.user-logout:hover {
+    color: $background-color;
+    background: $primary-dark-blue;
+}
+
+@media screen and (max-width: 500px) {
+
+    .profile-name {
+        font-size: $font-size-14;
+    }
+
+    .profile-role,
+    .top-profile {
+        font-size: $font-size-12;
+    }
+
+    .profile {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    .container-navbar {
+        margin-left: 103px;
+    }
+}

@@ -1,0 +1,59 @@
+@import './../../../../../styles-shared.scss';
+
+.delete-header {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    color: $text-color-dark-blue;
+    font-size: $font-size-24;
+    display: grid;
+}
+
+.delete-title {
+    font-size: $font-size-36;
+}
+
+.delete-header {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.action-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.delete-data {
+    background: $background-delete;
+    color: $background-color;
+    font-weight: $bold;
+    opacity: 1;
+}
+
+.delete-data:hover {
+    opacity: 0.8;
+}
+
+.cancel-delete {
+    background: transparent;
+    color: $primary-dark-blue;
+    border: 1px solid $primary-dark-blue !important;
+    margin-left: 16px;
+}
+
+.delete-data,
+.cancel-delete {
+    width: 100%;
+    height: 56px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: $font-size-18;
+}

@@ -1,0 +1,68 @@
+<mat-tab-group (selectedTabChange)="getTabIndex($event)">
+  <mat-tab *ngFor="let category of assetTypes" label="{{category.name}}">
+    <ng-template mat-tab-label>
+      <div class="category-tooltip">
+        <span class="tooltip-name">{{category.name}}</span> <span *ngIf="admin" class="tooltip-text"><button
+            type="button" class="fa fa-edit" (click)="editCategory(category.uid)"></button><button type="button"
+            class="fa fa-trash" (click)="deleteCategory(category.uid)"></button></span>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
+<div class="table-container">
+  <span *ngIf="assetsList.length < 1">There aren't any data yet.</span>
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows *ngIf="assetsList.length > 0">
+    <ng-container matColumnDef="name" *ngIf="dataSource.length != 0">
+      <th mat-header-cell *matHeaderCellDef>
+        <span *ngIf="dataSource.filter.length == 0">Assets</span>
+        <span *ngIf="dataSource.filter.length > 0 && dataSource.filteredData.length > 0">Assets</span>
+        <span *ngIf="dataSource.filter.length > 0 && dataSource.filteredData.length == 0">There are no data linked with
+          "{{dataSource.filter}}"</span>
+      </th>
+      
+      <mat-expansion-panel mat-cell #MatSort *matCellDef="let assetsList">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{assetsList.asset_type_name}}
+          </mat-panel-title>
+          <mat-panel-descriptiopn>
+            28.03.2019
+          </mat-panel-descriptiopn>
+        </mat-expansion-panel-header>
+        <div class="expand-row" *ngFor="let key of assetsList.asset_data | ReadObjectPipe;let i = index">
+          {{key}}: {{assetsList.asset_data[key]}}
+        </div>
+      </mat-expansion-panel>
+    </ng-container>
+
+    <ng-container matColumnDef="more">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let assetsList">
+        <div class="more-button">
+          <button mat-button [matMenuTriggerFor]="menu" class="dropdown-toggle dropdown-menu-user"></button>
+          <mat-menu #menu="matMenu" class="mat-menu">
+            <div class="pointing-square"></div>
+            <button *ngIf="admin" mat-menu-item class="edit-asset" (click)="editAsset(assetsList.uid)"><span
+                class="fa fa-edit"></span>
+              Edit</button>
+            <button mat-menu-item class="view-qr" (click)="viewQRCode(assetsList.uid)"><span
+                class="fa fa-qrcode"></span>
+              View QR</button>
+            <button mat-menu-item class="asset-history" (click)="assetHistory(assetsList.uid)"><span
+                class="fa fa-history"></span>
+              History</button>
+            <button *ngIf="admin" mat-menu-item class="delete-asset" (click)="deleteAsset(assetsList.uid)"><span
+                class="fa fa-trash-alt"></span> Delete</button>
+          </mat-menu>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  <mat-paginator [ngStyle]="{'display': assetsList.length > 5 ? 'block' : 'none'}" [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons></mat-paginator>
+</div>

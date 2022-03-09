@@ -1,0 +1,24 @@
+<div class="top-close-modal">
+  <button type="button" class="close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div mat-dialog-title class="mat-dialog-title">
+  <p>Asset history</p>
+</div>
+<div mat-dialog-content>
+  <div class="asset-history" *ngFor="let history of assetHistory; let i = index">
+    <div class="history-title">
+      <span class="history-type">{{assetHistory[i].event_type}}</span>
+      <span class="history-timestamp">{{assetHistory[i].timestamp}}</span>
+    </div>
+    <span *ngIf="assetHistory[i].current_state_data"
+      class="history-body">{{assetHistory[i].current_state_data.Location}}
+      | {{ assetHistory[i].current_state_data["Who is using it"]}}</span>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <div class="close-container">
+    <button mat-raised-button class="close-history" (click)="closeDialog()">Close</button>
+  </div>
+</div>

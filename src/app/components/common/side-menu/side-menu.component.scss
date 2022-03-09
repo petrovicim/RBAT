@@ -1,0 +1,225 @@
+@import './../../../../styles-shared.scss';
+
+.side-navbar {
+    height: 100%;
+    width: 103px;
+    border-right: 1px solid $border-expand;
+    float: left;
+    position: fixed;
+    background: $background-color;
+}
+
+.side-navbar a img {
+    display: flex;
+    margin: 0 auto;
+}
+
+.brand {
+    padding-top: 17px;
+    margin: 0 auto;
+    display: flex;
+    cursor: pointer;
+    outline: none;
+}
+
+.routes {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 220px;
+}
+
+.routes ul,
+.side-navbar ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.active {
+    color: $primary-dark-blue !important;
+}
+
+.users-active-route,
+.assets-active-route,
+.entities-active-route,
+.history-active-route {
+    border-right: 4px solid $primary-dark-blue !important;
+}
+
+.users-container a,
+.assets-container a,
+.entities-container a,
+.history-container a {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
+    font-size: $font-size-16;
+}
+
+.users-container,
+.assets-container,
+.entities-container,
+.history-container {
+    width: 100%;
+    margin-bottom: 50px;
+    outline: none;
+    cursor: pointer;
+    border-right: 4px solid transparent;
+}
+
+.users-container a,
+.assets-container a,
+.entities-container a,
+.history-container a {
+    color: $secondary-color;
+    text-decoration: none;
+}
+
+.users-container:hover a,
+.assets-container:hover a,
+.entities-container:hover a,
+.history-container:hover a {
+    color: $primary-dark-blue;
+}
+
+.users-container:hover,
+.assets-container:hover,
+.entities-container:hover,
+.history-container:hover {
+    border-right: 4px solid $primary-dark-blue;
+}
+
+.users-logo,
+.assets-logo,
+.entities-logo,
+.history-logo {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    outline: none;
+}
+
+.users-logo {
+    background: $url-common $users-of;
+}
+
+.assets-logo {
+    background: $url-common $assets-of;
+}
+
+.entities-logo {
+    background: $url-common $entities-of;
+}
+
+.entities-container:hover .entities-logo,
+.entities-logo-active {
+    background: $url-common $entities-on;
+}
+
+.assets-container:hover .assets-logo,
+.assets-logo-active {
+    background: $url-common $assets-on;
+}
+
+.users-container:hover .users-logo,
+.users-logo-active {
+    background: $url-common $users-on;
+}
+
+#menuToggle input,
+#menuToggle span {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    #menuToggle {
+        display: block;
+        position: fixed;
+        top: 30px;
+        left: 40px;
+        z-index: 3;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 4;
+        -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #C7C9CC;
+        border-radius: 3px;
+        z-index: 3;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: $primary-dark-blue;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menuToggle input:checked~#menu {
+        transform: none;
+    }
+
+    #menu {
+        margin-left: -40px;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    .side-navbar {
+        margin-top: 20px;
+    }
+
+    .routes {
+        margin-top: 55px;
+    }
+
+    .users-container,
+    .assets-container,
+    .entities-container,
+    .history-container {
+        margin-bottom: 20px;
+    }
+}

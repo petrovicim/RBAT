@@ -1,0 +1,73 @@
+<div>
+  <div class="search-bar">
+    <app-search-bar></app-search-bar>
+  </div>
+
+  <div class="entities-path">
+    <span *ngFor="let entity of myQuery; let i = index" (click)="goToParent(i, entity.name)">{{entity.name}} </span>
+  </div>
+
+  <div class="children-table">
+    <div class="no-child" *ngIf="entityChildrenList.length == 0">
+      There are no children for this parent!
+    </div>
+
+    <table mat-table [dataSource]="dataSource" *ngIf="entityChildrenList.length > 0">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name
+        </th>
+
+        <td mat-cell *matCellDef="let entityChildrenList">
+          <span class="child-name">{{entityChildrenList.name}}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+
+        <td mat-cell *matCellDef="let entityChildrenList">
+          <span class="child-date">{{entityChildrenList.created_at | date}}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="more">
+        <th mat-header-cell *matHeaderCellDef></th>
+
+        <td mat-cell *matCellDef="let entityChildrenList">
+          <div class="more-button">
+            <button mat-button [matMenuTriggerFor]="menu" class="dropdown-toggle dropdown-menu-user"></button>
+            <mat-menu #menu="matMenu">
+              <div class="pointing-square"></div>
+
+              <button *ngIf="admin" mat-menu-item class="user-activate"
+                (click)="editEntity(entityChildrenList.uid)"><span class="fa fa-edit"></span>
+                Edit</button>
+
+              <button *ngIf="admin" mat-menu-item class="user-activate"
+                (click)="addEntityChild(entityChildrenList.uid, entityChildrenList.name)"><span
+                  class="fa fa-edit"></span>
+                Add child</button>
+
+              <button mat-menu-item class="user-activate"
+                (click)="redirectToNestedEntities(entityChildrenList.uid, entityChildrenList.name)"><span
+                  class="fa fa-edit"></span>
+                View child</button>
+
+              <button *ngIf="admin" mat-menu-item class="user-delete"
+                (click)="deleteEntity(entityChildrenList.uid)"><span class="fa fa-trash-alt"></span> Delete</button>
+            </mat-menu>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        <td><img src="./../../../../assets/icons/assets-dropdown0.png"></td>
+      </tr>
+    </table>
+    <mat-paginator [ngStyle]="{'display': entityChildrenList.length > 5 ? 'block' : 'none'}"
+      [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>

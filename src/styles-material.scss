@@ -1,0 +1,934 @@
+@import './styles-shared.scss';
+
+.mat-tab-body-content {
+  height: 0px !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: $primary-dark-blue;
+}
+
+.mat-tab-label:focus,
+.mat-tab-label:hover,
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header {
+  color: $text-color-dark-blue;
+  font-family: Rubik;
+  font-style: normal;
+  line-height: 23px;
+}
+
+.mat-tab-label:focus,
+.mat-tab-label:hover {
+  font-size: $font-size-16;
+  font-weight: normal;
+}
+
+.mat-tab-label {
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 620px) {
+  .mat-content {
+    display: unset !important;
+  }
+
+  .mat-expansion-panel-header-title {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .mat-header-cell,
+  .table-container span,
+  .mat-expansion-panel-header-title {
+    font-size: $font-size-16 !important;
+  }
+
+  .mat-expansion-panel-header,
+  .expand-row,
+  .mat-tab-label {
+    font-size: $font-size-14 !important;
+  }
+}
+
+.mat-expansion-panel-header-title {
+  font-weight: 700;
+  font-size: $font-size-18;
+  flex-grow: unset !important;
+  width: 50%;
+}
+
+.mat-expansion-panel-body {
+  color: $secondary-light-blue;
+  background: $background-expand;
+  padding: 10px 24px !important;
+  font-size: $font-size-16;
+}
+
+.mat-expansion-panel-header {
+  color: $secondary-color;
+}
+
+.mat-tab-label {
+  color: $secondary-color;
+  padding: 0 10px !important;
+  min-width: 120px !important;
+}
+
+.mat-tab-header-pagination-chevron {
+  border-color: $text-color-dark-blue;
+}
+
+.mat-expansion-panel-header {
+  height: 74px !important;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover {
+  background: none;
+}
+
+// END for table
+
+// CSS for material menu on table more button
+
+.mat-menu-content {
+  background: $background-color;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+  position: absolute;
+  left: -3em;
+  top: 1em;
+  width: 120px;
+}
+
+.pointing-square {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-45deg);
+  border-right: 1px solid $secondary-color;
+  border-top: 1px solid $secondary-color;
+  background: $background-color;
+  margin-top: -19px;
+  margin-left: 40%;
+  position: absolute;
+}
+
+.mat-menu-item {
+  padding: 0 10px !important;
+}
+
+// END for material menu
+
+// Style for top menu profile
+
+.top-profile {
+  .mat-menu-content {
+    left: 9.4em !important;
+    top: 0em !important;
+    width: 90px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .mat-menu-content {
+      left: 7.55em !important;
+      width: 75px;
+    }
+
+    .mat-menu-item {
+      font-size: $font-size-12;
+    }
+  }
+}
+
+// END for top menu profile
+
+// Style for add and new buttons 
+
+.add-category,
+.btn-add-new,
+.btn-import-csv {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: $bold;
+  font-size: $font-size-18;
+  line-height: 23px;
+  margin-left: 16px !important;
+}
+
+.btn-import-csv {
+  background: #d2d3eb;
+  width: 100%;
+  height: 56px;
+  color: #241B99;
+  margin-left: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-category {
+  width: 100%;
+  height: 56px;
+  border: none;
+  background: transparent;
+  box-shadow: none !important;
+  cursor: pointer;
+  color: $primary-dark-blue;
+}
+
+.btn-add-new {
+  background: $primary-dark-blue;
+  width: 100%;
+  height: 56px;
+  color: $background-color;
+  margin-left: 16px !important;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.btn-add-new:hover {
+  background: #2E24AC;
+}
+
+.btn-add-new:active {
+  background: #09007A;
+}
+
+@media screen and (max-width: 880px) {
+
+  .add-category,
+  .btn-add-new,
+  .btn-import-csv {
+    min-width: 40px;
+    font-size: $font-size-14;
+    width: 100%;
+    max-width: 219px;
+    margin-left: 0 !important;
+    padding: 5px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .add-category,
+  .btn-add-new,
+  .btn-import-csv {
+    font-size: $font-size-12;
+  }
+}
+
+// END style for add and new buttons
+
+// CSS for material dialog, input, select
+
+.mat-dialog-container {
+  height: auto !important;
+  max-height: calc(100vh - 100px);
+  width: 688px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .mat-dialog-container {
+    padding: 15px !important;
+    overflow: unset !important;
+  }
+}
+
+// Add new user category
+.user-category-form-fields {
+  .cdk-overlay-pane {
+    min-width: 387px !important;
+    left: 378px !important;
+  }
+}
+
+// CSS for add new btn component
+
+.add-new-btn-component,
+.edit-category-component,
+.edit-data-component,
+.add-category-btn-component {
+  height: auto !important;
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+
+  .mat-form-field-infix {
+    min-height: 50px;
+    border: none !important;
+    padding-bottom: 0px !important;
+  }
+
+  .mat-form-field-infix .mat-input-element {
+    width: 100%;
+    height: 56px;
+    padding: 0 10px !important;
+    border-radius: 5px !important;
+    border: 1px solid $secondary-color !important;
+    background: transparent !important;
+  }
+
+  .mat-select-panel-wrap,
+  .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane {
+    max-width: 453px !important;
+  }
+
+  .mat-select-arrow {
+    border: none !important;
+    margin: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: $url-material $dropdown-select-off;
+  }
+
+  .mat-form-field-infix .mat-select:hover .mat-select-arrow,
+  .mat-form-field-infix .mat-select:focus .mat-select-arrow {
+    background: $url-material $dropdown-select-on;
+  }
+
+  .mat-select-panel-wrap ng-tns-c17-14 ng-trigger ng-trigger-transformPanelWrap ng-star-inserted {
+    max-width: 300px;
+  }
+
+
+  .mat-select-trigger {
+    margin-top: 17px;
+  }
+
+  .mat-form-field-infix .mat-select {
+    width: 100%;
+    height: 56px;
+    padding: 0 10px !important;
+    border-radius: 5px !important;
+    border: 1px solid $secondary-color !important;
+    background: transparent !important;
+  }
+
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    background: $primary-dark-blue !important;
+    color: $background-color;
+  }
+
+  .mat-form-field-infix .mat-input-element:focus,
+  .mat-form-field-infix .mat-input-element:hover,
+  .mat-form-field-infix .mat-select:hover,
+  .mat-form-field-infix .mat-select:focus {
+    border: 1px solid $primary-dark-blue !important;
+  }
+
+  .mat-form-field-type-mat-select .mat-form-field-label {
+    width: calc(100% - 30px) !important;
+  }
+
+  .mat-form-field-infix .mat-select .mat-select-value,
+  .mat-form-field-infix .mat-input-element {
+    color: $secondary-color;
+    background: transparent !important;
+  }
+
+  .mat-focused .mat-form-field-required-marker,
+  .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: $primary-dark-blue;
+  }
+
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    left: 10px;
+    top: 32px;
+  }
+
+  .mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored {
+    border-radius: 5px !important;
+    border: 1px solid red !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .mat-form-field-label {
+    background: $background-color;
+    left: 10px;
+    width: 100%;
+    max-width: 400px !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+    margin-top: 0em;
+    margin-left: 1em;
+  }
+
+  @media screen and (max-width: 600px) {
+    .mat-form-field-label {
+      max-width: 300px !important;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .mat-form-field-label {
+      max-width: 200px !important;
+    }
+  }
+
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float:hover .mat-form-field-label {
+    color: $primary-dark-blue !important;
+  }
+
+  .mat-form-field-underline {
+    height: 0 !important;
+    transform: none !important;
+    background-color: none;
+    width: 0%;
+    bottom: 0px;
+  }
+
+  .mat-form-field-ripple {
+    height: 0 !important;
+  }
+
+  .mat-form-field.mat-focused .mat-form-field-label,
+  .mat-form-field-infix .mat-input-element:hover,
+  .mat-form-field-infix .mat-input-element:focus,
+  .mat-form-field-infix .mat-select:hover .mat-select-value,
+  .mat-form-field-infix .mat-select:focus .mat-select-value,
+  .mat-form-field-infix:hover .mat-form-field-label {
+    color: $primary-dark-blue;
+  }
+
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    width: auto !important;
+    padding: 0 10px 0 10px;
+  }
+
+  .mat-form-field-label:not {
+    outline: none;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label {
+    top: 2.2em;
+    padding: 0 10px 0 10px;
+    font-size: $font-size-16;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-dialog-actions {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 0 30px 0 !important;
+  }
+
+  .mat-dialog-title {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto !important;
+    padding-top: 50px !important;
+  }
+
+  .mat-dialog-content {
+    padding: 52px 0 0 0 !important;
+    width: 100%;
+    max-width: 450px;
+    max-height: none !important;
+    margin: 0 auto !important;
+    overflow: unset !important;
+    position: relative;
+  }
+}
+
+// END for add new btn component
+
+// CSS for input
+.add-category-btn-component,
+.edit-category-component,
+.edit-data-component {
+  height: auto !important;
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+
+  .mat-form-field-infix {
+    min-height: 50px;
+    border: none !important;
+    padding-bottom: 0px !important;
+  }
+
+  .mat-form-field-infix .mat-input-element {
+    width: 100%;
+    height: 56px;
+    padding: 0 10px !important;
+    border-radius: 5px !important;
+    border: 1px solid grey !important;
+    background: transparent !important;
+  }
+
+  .mat-form-field-infix .mat-input-element:focus,
+  .mat-form-field-infix .mat-input-element:hover {
+    border: 1px solid $primary-dark-blue !important;
+  }
+
+  .mat-form-field-infix .mat-input-element {
+    color: $secondary-color;
+  }
+
+  .mat-focused .mat-form-field-required-marker {
+    color: $primary-dark-blue;
+  }
+
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    left: 10px;
+    top: 32px;
+  }
+
+  .mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored {
+    border-radius: 5px !important;
+    border: 1px solid red !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .mat-form-field-label {
+    background: $background-color;
+    left: 10px;
+    width: 100%;
+    max-width: 400px !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    .mat-form-field-label {
+      max-width: 300px !important;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .mat-form-field-label {
+      max-width: 200px !important;
+    }
+  }
+
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float:hover .mat-form-field-label {
+    color: $primary-dark-blue !important;
+  }
+
+  .mat-form-field-underline {
+    height: 0 !important;
+    transform: none !important;
+    background-color: none;
+    width: 0%;
+    bottom: 0px;
+  }
+
+  .mat-form-field-ripple {
+    height: 0 !important;
+  }
+
+  .mat-form-field.mat-focused .mat-form-field-label,
+  .mat-form-field-infix .mat-input-element:hover,
+  .mat-form-field-infix .mat-input-element:focus,
+  .mat-form-field-infix:hover .mat-form-field-label {
+    color: $primary-dark-blue;
+  }
+
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    width: auto !important;
+    padding: 0 10px 0 10px;
+  }
+
+  .mat-form-field-label:not {
+    outline: none;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label {
+    top: 2.2em;
+    padding: 0 10px 0 10px;
+    font-size: $font-size-16;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-dialog-actions {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 0 30px 0 !important;
+  }
+
+  .mat-dialog-title {
+    width: 80%;
+    margin: 0 auto !important;
+    padding-top: 50px !important;
+  }
+
+  .mat-dialog-content {
+    padding: 52px 0 0 0 !important;
+    width: 100%;
+    max-width: 450px;
+    max-height: none !important;
+    margin: 0 auto !important;
+    overflow: unset !important;
+    position: relative;
+  }
+}
+
+// END for add category btn
+// END for input, dialog, select
+
+//login + reset-password
+.login-section,
+.reset-password-section {
+  mat-checkbox {
+    font-family: Rubik;
+    font-weight: $bold;
+    font-size: $font-size-16;
+    color: $primary-dark-blue;
+  }
+
+  mat-label {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+    color: $secondary-light-blue;
+    opacity: 0.5;
+  }
+
+  .mat-empty.mat-form-field-empty mat-label {
+    opacity: 1;
+  }
+
+  .mat-input-element {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+    line-height: 23px;
+    color: $secondary-light-blue;
+  }
+
+  mat-form-field:hover {
+    background: $input-border;
+  }
+
+  mat-form-field:first-child:hover {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  mat-form-field:last-child:hover {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .mat-form-field-required-marker,
+  .mat-form-field-underline {
+    display: none;
+  }
+}
+
+// =login=
+
+//register
+.register-section {
+  mat-checkbox {
+    font-family: Rubik;
+    font-weight: $bold;
+    font-size: $font-size-16;
+    color: $primary-dark-blue;
+  }
+
+  mat-label {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+    color: $secondary-light-blue;
+    opacity: 0.5;
+  }
+
+  .mat-empty.mat-form-field-empty mat-label {
+    opacity: 1;
+  }
+
+  .mat-input-element {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+    line-height: 23px;
+    color: $secondary-light-blue;
+  }
+
+  mat-form-field:hover,
+  .ng-select__parent:hover {
+    background: $input-border;
+  }
+
+  @media screen and (max-width: 758px) {
+    .register__fields>div:first-child mat-form-field:first-child:hover {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    .register__fields>div:last-child mat-form-field:last-child:hover,
+    .register__fields>div:last-child .ng-select__parent:hover {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  @media screen and (min-width: 759px) {
+    .register__fields>div:first-child mat-form-field:nth-child(1):hover {
+      border-top-left-radius: 5px;
+    }
+
+    .register__fields>div:first-child mat-form-field:nth-child(2):hover {
+      border-top-right-radius: 5px;
+    }
+
+    .register__fields>div:last-child mat-form-field:nth-child(1):hover {
+      border-bottom-left-radius: 5px;
+    }
+
+    .register__fields>div:last-child mat-form-field:nth-child(2):hover,
+    .register__fields>div:last-child .ng-select__parent:hover {
+      border-bottom-right-radius: 5px;
+    }
+  }
+
+  .mat-form-field-required-marker,
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  .ng-dropdown-panel.ng-select-bottom {
+    bottom: calc(100% - 1.25em + 5px);
+    top: auto !important;
+    left: -16px;
+  }
+
+  .ng-select .ng-select-container .ng-value-container .ng-input {
+    bottom: calc(5px + .4375em);
+  }
+
+  // ng
+  ng-select {
+    margin-top: -2px;
+    margin-bottom: -6px;
+    margin-left: calc(24px + 15px);
+  }
+
+  .ng-select-invalid {
+    .ng-placeholder {
+      color: $invalid !important;
+    }
+  }
+
+  .ng-select .ng-clear-wrapper,
+  .ng-arrow-wrapper {
+    display: none;
+  }
+
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected {
+    color: $secondary-light-blue !important;
+    opacity: 0.5;
+  }
+
+  .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+    color: $secondary-light-blue !important;
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+  }
+
+  .ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+    color: $secondary-light-blue !important;
+  }
+
+  .ng-select .ng-select-container:after,
+  .ng-select.ng-select-focused .ng-select-container:after {
+    border-color: transparent !important;
+  }
+
+  .ng-input input {
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: $font-size-16;
+    line-height: 23px;
+    color: $secondary-light-blue;
+  }
+
+  .ng-select div,
+  .ng-select input,
+  .ng-select span {
+    font-family: Rubik;
+    font-weight: normal;
+    color: $secondary-light-blue;
+  }
+
+  .ng-select span {
+    line-height: 23px;
+    font-size: $font-size-16;
+  }
+
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// =register=
+
+
+// user-edit
+.user-edit__section .mat-form-field-required-marker {
+  display: none;
+}
+
+.user-edit__section .mat-input-element {
+  font-family: Rubik;
+  font-weight: normal;
+  font-size: $font-size-16;
+  line-height: 23px;
+  color: $secondary-color;
+}
+
+.user-edit__section .mat-input-element:focus {
+  color: $primary-dark-blue;
+}
+
+@media screen and (min-width: 871px) {
+  .user-edit__section .mat-form-field-underline {
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    height: 48px !important;
+    background-color: transparent;
+    max-width: 336px;
+    margin-bottom: -6px;
+    margin-left: -24px;
+  }
+
+  .user-edit__section mat-form-field {
+    max-width: calc(336px - 24px * 2);
+  }
+
+  .user-edit__section .mat-form-field-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .user-edit__section .mat-form-field-ripple {
+    border: 1px solid $primary-dark-blue;
+    border-radius: 5px;
+    height: 48px !important;
+    background-color: transparent !important;
+    max-width: 338px;
+    margin-top: -1px;
+    left: -1px;
+    right: -1px;
+    width: calc(100% + 2px);
+  }
+
+  .user-edit__section mat-label {
+    display: none;
+  }
+}
+
+// =user-edit=
+
+
+// CSS for paginator
+.mat-paginator-page-size-select {
+  width: 32px !important;
+}
+
+.mat-paginator-container,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: $text-color-dark-blue !important;
+}
+
+.mat-form-field-ripple {
+  background-color: $text-color-dark-blue !important;
+}
+
+.mat-select-panel {
+  border: 1px solid $primary-dark-blue;
+  border-radius: 5px !important;
+}
+
+.mat-option {
+  padding: 0 0 0 16px !important;
+  color: $secondary-color;
+  margin: 5px 0 5px 0;
+}
+
+.mat-option:hover,
+.mat-option.mat-active {
+  background: $primary-dark-blue !important;
+  color: $background-color;
+}
+
+.mat-option:focus:not(.mat-option-disabled),
+.mat-option:hover:not(.mat-option-disabled) {
+  background: $primary-dark-blue !important;
+  color: $background-color;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $secondary-color;
+}
+
+.mat-pseudo-checkbox-checked::after {
+  top: 2.7px !important;
+  left: 2px !important;
+}
+
+.mat-pseudo-checkbox::after {
+  color: $primary-dark-blue;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked {
+  background: $background-color;
+}
+
+.mat-pseudo-checkbox.mat-pseudo-checkbox-checked {
+  border: 1px solid $primary-dark-blue !important;
+}
+
+@media screen and (max-width: 620px) {
+  .mat-paginator-range-label {
+    margin: 0 !important;
+  }
+
+  tr.mat-header-row th,
+  .table-container span {
+    font-size: $font-size-14 !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  tr.mat-header-row th,
+  .table-container span {
+    font-size: $font-size-12 !important;
+  }
+}
+
+// END css for paginator
+
+// view QR code
+
+.view-qr-code {
+  .mat-dialog-content {
+    overflow: unset !important;
+  }
+}
+
+// end view QR code
