@@ -87,7 +87,6 @@ export class EntitiesTableComponent implements OnInit, OnDestroy {
   getEntity(index) {
     const cleaner = this._service.get(`${environment.base}${environment.entity_types}${index}`).subscribe((res: any) => {
       this.entitiesList = res.entity_type.entities;
-      console.log(this.entitiesList);
 
       this.dataSource = new MatTableDataSource<any>(this.entitiesList);
       this.dataSource.paginator = this.paginator;

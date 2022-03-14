@@ -15,7 +15,6 @@ export * from '@admin/entities/entities.component';
 export * from '@admin/assets/add-new-asset-btn/add-new-asset-btn.component';
 export * from '@admin/assets/assets-table/assets-table.component';
 export * from '@admin/assets/add-asset-category-btn/add-asset-category-btn.component';
-export * from '@admin/assets/import-csv-btn/import-csv-btn.component';
 export * from '@admin/users/users.component';
 export * from '@admin/user-edit/user-edit.component';
 export * from '@common/login/login.component';

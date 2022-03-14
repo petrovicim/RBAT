@@ -25,6 +25,9 @@
 
 .profile-info {
     display: -webkit-inline-box;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .profile-info ul {
